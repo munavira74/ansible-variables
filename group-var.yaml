@@ -1,5 +1,5 @@
 - name: installing, enabling and adding content to httpd using variables
-  hosts: g1
+  hosts: alma1
   tasks:
   - name: installing httpd
     dnf:
