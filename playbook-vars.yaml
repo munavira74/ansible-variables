@@ -1,7 +1,7 @@
 - name: printing playbook vars
   hosts: alma1
   vars:
-    username: aswin
+    username: muna
     a: apple
   tasks:
   - name: printing vars using debug module
