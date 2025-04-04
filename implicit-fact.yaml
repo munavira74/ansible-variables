@@ -1,0 +1,7 @@
+- name: impicit and explicit gather_fact
+  hosts: all
+  gather_facts: no
+  tasks:
+  - name: debug module
+    debug:
+      msg: hello

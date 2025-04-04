@@ -1,0 +1,20 @@
+- name: installing, enabling and adding content to httpd using variables
+  hosts: ubuntu
+  vars:
+    package: apache2
+    destination: /var/www/html/index.html
+    content: ubuntu
+  tasks:
+  - name: installing httpd
+    apt:
+      name: "{{package}}"
+      state: present
+  - name: enabling and starting
+    service:
+      name: "{{package}}"
+      enabled: yes
+      state: started
+  - name: adding content to /var/www/html/index.html
+    copy:
+      dest: "{{destination}}"
+      content: "{{content}}"

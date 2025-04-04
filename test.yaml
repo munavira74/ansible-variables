@@ -1,0 +1,6 @@
+- name: test
+  hosts: noav:
+  tasks:
+    - name: Debug OS family
+      debug:
+        msg: "{{ ansible_os_family }}"

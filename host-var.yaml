@@ -1,0 +1,16 @@
+- name: installing, enabling and adding content to httpd using variables
+  hosts: alma1
+  tasks:
+  - name: installing httpd
+    dnf:
+      name: "{{package}}"
+      state: present
+  - name: enabling and starting
+    service:
+      name: "{{package}}"
+      enabled: yes
+      state: started
+  - name: adding content to /var/www/html/index.html
+    copy:
+      dest: "{{destination}}"
+      content: "{{content}}"

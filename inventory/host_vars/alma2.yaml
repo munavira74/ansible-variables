@@ -1,0 +1,3 @@
+package: httpd
+destination: /var/www/html/index.html
+content: alma1

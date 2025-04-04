@@ -1,0 +1,11 @@
+- name: printing playbook vars
+  hosts: alma1
+  vars:
+    username: aswin
+    a: apple
+  tasks:
+  - name: printing vars using debug module
+    debug:
+      msg: |
+        "the username is {{username}}"
+        {{a}}

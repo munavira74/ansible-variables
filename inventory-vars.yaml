@@ -1,0 +1,8 @@
+- name: printing inventory vars
+  hosts: all
+  tasks:
+  - name: using debug
+    debug:
+      msg: |
+        {{ansible_host}}
+        {{ansible_user}}

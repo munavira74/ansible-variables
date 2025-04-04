@@ -1,0 +1,18 @@
+- name: printing setup module vars
+  hosts: ubuntu
+  tasks:
+  - name: debug module
+    debug:
+      msg: |
+        {{ansible_os_family}}
+        {{ansible_distribution}}
+        {{ansible_distribution_version}}
+        {{ansible_processor}}
+        {{ansible_processor_cores}}
+        {{ansible_kernel}}
+        {{ansible_devices}}
+        {{ansible_default_ipv4}}
+        {{ansible_architecture}}
+        {{ansible_virtualization_type}}
+        {{ansible_user_shell}}
+        {{ansible_system}}

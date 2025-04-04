@@ -1,0 +1,33 @@
+all:
+  hosts:
+    alma1:
+      ansible_user: almanew1
+      ansible_host: 172.16.18.2
+      ansible_become: yes
+      ansible_become_method: sudo
+      ansible_become_pass: 8520
+    alma2:
+      ansible_user: almanew2
+      ansible_host: 172.16.18.3
+      ansible_become: yes
+      ansible_become_method: sudo
+      ansible_become_pass: 8520
+    ubuntu:
+      ansible_user: amal
+      ansible_host: 172.16.18.4
+      ansible_become: yes
+      ansible_become_method: sudo
+      ansible_become_pass: 8520
+  children:
+    g1:
+      hosts:
+        alma1:
+        alma2:
+    g2:
+      hosts:
+        ubuntu:
+        alma1:
+    g3:
+      children:
+        g1:
+        g2:

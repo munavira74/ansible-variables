@@ -1,0 +1,8 @@
+- name: dictionay variable
+  hosts: alma2
+  tasks:
+  - debug:
+      msg: |
+        {{ansible_facts['virtualization_type']}}
+        {{ansible_facts['user_shell']}}
+        {{ansible_facts['system']}}
